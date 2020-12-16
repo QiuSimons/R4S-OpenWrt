@@ -1,0 +1,96 @@
+From 7749639531c665b64740f1de03ff28d1206800d1 Mon Sep 17 00:00:00 2001
+From: QiuSimons <45143996+QiuSimons@users.noreply.github.com>
+Date: Fri, 11 Dec 2020 10:38:56 +0800
+Subject: [PATCH] RK3399: enable 1.5 2.0 ghz cpufreq opp
+
+---
+ arch/arm64/boot/dts/rockchip/rk3399-opp.dtsi | 30 +++++++++++++-------
+ 1 file changed, 19 insertions(+), 11 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-opp.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-opp.dtsi
+index d6f1095abb040..69cc9b05baa57 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-opp.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399-opp.dtsi
+@@ -15,7 +15,7 @@
+ 		};
+ 		opp01 {
+ 			opp-hz = /bits/ 64 <600000000>;
+-			opp-microvolt = <800000>;
++			opp-microvolt = <825000>;
+ 		};
+ 		opp02 {
+ 			opp-hz = /bits/ 64 <816000000>;
+@@ -23,15 +23,19 @@
+ 		};
+ 		opp03 {
+ 			opp-hz = /bits/ 64 <1008000000>;
+-			opp-microvolt = <925000>;
++			opp-microvolt = <900000>;
+ 		};
+ 		opp04 {
+ 			opp-hz = /bits/ 64 <1200000000>;
+-			opp-microvolt = <1000000>;
++			opp-microvolt = <975000>;
+ 		};
+ 		opp05 {
+ 			opp-hz = /bits/ 64 <1416000000>;
+-			opp-microvolt = <1125000>;
++			opp-microvolt = <1100000>;
++		};
++		opp06 {
++			opp-hz = /bits/ 64 <1512000000>;
++			opp-microvolt = <1150000>;
+ 		};
+ 	};
+ 
+@@ -54,23 +58,27 @@
+ 		};
+ 		opp03 {
+ 			opp-hz = /bits/ 64 <1008000000>;
+-			opp-microvolt = <875000>;
++			opp-microvolt = <850000>;
+ 		};
+ 		opp04 {
+ 			opp-hz = /bits/ 64 <1200000000>;
+-			opp-microvolt = <950000>;
++			opp-microvolt = <900000>;
+ 		};
+ 		opp05 {
+ 			opp-hz = /bits/ 64 <1416000000>;
+-			opp-microvolt = <1025000>;
++			opp-microvolt = <975000>;
+ 		};
+ 		opp06 {
+ 			opp-hz = /bits/ 64 <1608000000>;
+-			opp-microvolt = <1100000>;
++			opp-microvolt = <1050000>;
+ 		};
+ 		opp07 {
+ 			opp-hz = /bits/ 64 <1800000000>;
+-			opp-microvolt = <1200000>;
++			opp-microvolt = <1150000>;
++		};
++		opp08 {
++			opp-hz = /bits/ 64 <2016000000>;
++			opp-microvolt = <1250000>;
+ 		};
+ 	};
+ 
+@@ -91,7 +99,7 @@
+ 		};
+ 		opp03 {
+ 			opp-hz = /bits/ 64 <500000000>;
+-			opp-microvolt = <875000>;
++			opp-microvolt = <850000>;
+ 		};
+ 		opp04 {
+ 			opp-hz = /bits/ 64 <600000000>;
+@@ -99,7 +107,7 @@
+ 		};
+ 		opp05 {
+ 			opp-hz = /bits/ 64 <800000000>;
+-			opp-microvolt = <1100000>;
++			opp-microvolt = <1075000>;
+ 		};
+ 	};
+ };
