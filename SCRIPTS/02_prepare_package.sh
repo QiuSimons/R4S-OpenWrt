@@ -6,7 +6,6 @@ rm -rf ./target/linux/rockchip
 svn co https://github.com/1715173329/openwrt/branches/1806-k54-nanopi-r4s/target/linux/rockchip target/linux/rockchip
 rm -rf ./package/boot/uboot-rockchip
 svn co https://github.com/1715173329/openwrt/branches/1806-k54-nanopi-r4s/package/boot/uboot-rockchip package/boot/uboot-rockchip
-rm -rf ./target/linux/rockchip/armv8/base-files/etc/hotplug.d/net/40-net-smp-affinity
 
 #overclock 1.8/2.2
 cp -f ../PATCH/new/main/211-nanopi4-switch-opp-table.patch ./target/linux/rockchip/patches-5.4/211-nanopi4-switch-opp-table.patch
@@ -31,8 +30,6 @@ sed -i 's/Os/O2/g' include/target.mk
 sed -i 's/O2/O2/g' ./rules.mk
 #更新feed
 ./scripts/feeds update -a && ./scripts/feeds install -a
-#irqbalance
-sed -i "s,'0','1',g" feeds/packages/utils/irqbalance/files/irqbalance.config
 
 ##必要的patch
 #luci network
