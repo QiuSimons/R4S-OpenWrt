@@ -91,6 +91,9 @@ sed -i '/r8169/d' ./target/linux/rockchip/image/armv8.mk
 #更换cryptodev-linux
 rm -rf ./package/kernel/cryptodev-linux
 svn co https://github.com/project-openwrt/openwrt/trunk/package/kernel/cryptodev-linux package/kernel/cryptodev-linux
+#降级openssl（解决性能问题
+rm -rf ./package/libs/openssl
+svn co -r 90110 https://github.com/openwrt/openwrt/trunk/package/libs/openssl package/libs/openssl
 #更换htop
 rm -rf ./feeds/packages/admin/htop
 svn co https://github.com/openwrt/packages/trunk/admin/htop feeds/packages/admin/htop
