@@ -183,14 +183,17 @@ git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-vssr.git pac
 git clone -b master --depth 1 https://github.com/jerrykuku/lua-maxminddb.git package/lean/lua-maxminddb
 sed -i 's,default n,default y,g' package/lean/luci-app-vssr/Makefile
 sed -i '/V2ray:v2ray/d' package/lean/luci-app-vssr/Makefile
+sed -i 's,ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305,ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256,g' package/lean/luci-app-vssr/root/usr/share/vssr/genconfig_trojan.lua
+sed -i 's,TLS_AES_128_GCM_SHA256:TLS_CHACHA20_POLY1305_SHA256,TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256,g' package/lean/luci-app-vssr/root/usr/share/vssr/genconfig_trojan.lua
 #SSRP
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/lean/luci-app-ssr-plus
 pushd package/lean
-wget -qO - https://patch-diff.githubusercontent.com/raw/fw876/helloworld/pull/271.patch | patch -p1
+#wget -qO - https://patch-diff.githubusercontent.com/raw/fw876/helloworld/pull/271.patch | patch -p1
 popd
-#svn co https://github.com/project-openwrt/openwrt/trunk/package/lean/luci-app-ssr-plus package/lean/luci-app-ssr-plus
 sed -i 's,default n,default y,g' package/lean/luci-app-ssr-plus/Makefile
 sed -i '/V2ray:v2ray/d' package/lean/luci-app-ssr-plus/Makefile
+sed -i 's,ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305,ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256,g' package/lean/luci-app-ssr-plus/root/usr/share/shadowsocksr/gentrojanconfig.lua
+sed -i 's,TLS_AES_128_GCM_SHA256:TLS_CHACHA20_POLY1305_SHA256,TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256,g' package/lean/luci-app-ssr-plus/root/usr/share/shadowsocksr/gentrojanconfig.lua
 #SSRP依赖
 rm -rf ./feeds/packages/net/kcptun
 rm -rf ./feeds/packages/net/shadowsocks-libev
@@ -213,6 +216,8 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall pac
 sed -i 's,default n,default y,g' package/new/luci-app-passwall/Makefile
 sed -i '/V2ray:v2ray/d' package/new/luci-app-passwall/Makefile
 sed -i '/https_dns_proxy:https-dns-proxy/d' package/new/luci-app-passwall/Makefile
+sed -i 's,ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305,ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256,g' package/new/luci-app-passwall/luasrc/model/cbi/passwall/server/api/trojan.lua
+sed -i 's,TLS_AES_128_GCM_SHA256:TLS_CHACHA20_POLY1305_SHA256,TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256,g' package/new/luci-app-passwall/luasrc/model/cbi/passwall/server/api/trojan.lua
 cp -f ../PATCH/new/script/move_2_services.sh ./package/new/luci-app-passwall/move_2_services.sh
 pushd package/new/luci-app-passwall
 bash move_2_services.sh
@@ -325,9 +330,6 @@ svn co https://github.com/1715173329/tencentcloud-openwrt-plugin-ddns/trunk/tenc
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-aliddns package/new/luci-app-aliddns
 #翻译及部分功能优化
 cp -rf ../PATCH/duplicate/addition-trans-zh-master ./package/lean/lean-translate
-
-#let trojan prefer chacha20(vssr,passwall,ssrp
-patch -p1 < ../PATCH/new/main/chacha.patch
 
 ##最后的收尾工作
 #Lets Fuck
