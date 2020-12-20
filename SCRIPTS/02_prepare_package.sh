@@ -8,9 +8,9 @@ rm -rf ./package/boot/uboot-rockchip
 svn co https://github.com/1715173329/openwrt/branches/1806-k54-nanopi-r4s/package/boot/uboot-rockchip package/boot/uboot-rockchip
 
 #overclock 1.8/2.2
-cp -f ../PATCH/new/main/211-nanopi4-switch-opp-table.patch ./target/linux/rockchip/patches-5.4/211-nanopi4-switch-opp-table.patch
-cp -f ../PATCH/new/main/212-rk3399-overclock-rk3399-to-max-values.patch ./target/linux/rockchip/patches-5.4/212-rk3399-overclock-rk3399-to-max-values.patch
-cp -f ../PATCH/new/main/213-RK3399-set-critical-CPU-temperature-for-thermal-throttling.patch ./target/linux/rockchip/patches-5.4/213-RK3399-set-critical-CPU-temperature-for-thermal-throttling.patch
+#cp -f ../PATCH/new/main/211-nanopi4-switch-opp-table.patch ./target/linux/rockchip/patches-5.4/211-nanopi4-switch-opp-table.patch
+#cp -f ../PATCH/new/main/212-rk3399-overclock-rk3399-to-max-values.patch ./target/linux/rockchip/patches-5.4/212-rk3399-overclock-rk3399-to-max-values.patch
+#cp -f ../PATCH/new/main/213-RK3399-set-critical-CPU-temperature-for-thermal-throttling.patch ./target/linux/rockchip/patches-5.4/213-RK3399-set-critical-CPU-temperature-for-thermal-throttling.patch
 
 #R4S_MJ
 #wget -qO - https://patch-diff.githubusercontent.com/raw/mj22226/openwrt/pull/2.patch | patch -p1
