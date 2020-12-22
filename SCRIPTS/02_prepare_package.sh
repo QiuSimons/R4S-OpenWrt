@@ -2,7 +2,7 @@
 clear
 
 #Kernel
-wget -qO - https://patch-diff.githubusercontent.com/raw/openwrt/openwrt/pull/3706.patch | patch -p1
+#wget -qO - https://patch-diff.githubusercontent.com/raw/openwrt/openwrt/pull/3706.patch | patch -p1
 
 #R4S_TL
 rm -rf ./target/linux/rockchip
