@@ -1,6 +1,9 @@
 #!/bin/bash
 clear
 
+#Kernel
+wget -qO - https://patch-diff.githubusercontent.com/raw/openwrt/openwrt/pull/3706.patch | patch -p1
+
 #R4S_TL
 rm -rf ./target/linux/rockchip
 svn co https://github.com/1715173329/openwrt/branches/1806-k54-nanopi-r4s/target/linux/rockchip target/linux/rockchip
