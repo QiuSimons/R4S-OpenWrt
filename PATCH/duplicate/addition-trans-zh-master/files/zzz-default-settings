@@ -3,6 +3,21 @@
 uci set luci.main.mediaurlbase='/luci-static/argon'
 uci commit luci
 
+#LED
+uci set system.led_wan=led
+uci set system.led_wan.name='WAN'
+uci set system.led_wan.sysfs=':green:wan'
+uci set system.led_wan.trigger='netdev'
+uci set system.led_wan.mode='link tx rx'
+uci set system.led_wan.dev='eth0'
+uci set system.led_lan=led
+uci set system.led_lan.name='LAN'
+uci set system.led_lan.sysfs=':green:lan'
+uci set system.led_lan.trigger='netdev'
+uci set system.led_lan.mode='link tx rx'
+uci set system.led_lan.dev='eth1'
+uci commit system
+
 #timezone
 uci set system.@system[0].timezone=CST-8
 uci set system.@system[0].zonename=Asia/Shanghai
