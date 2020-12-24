@@ -6,9 +6,9 @@ clear
 
 #R4S_TL
 rm -rf ./target/linux/rockchip
-svn co https://github.com/1715173329/openwrt/branches/1806-k54-nanopi-r4s/target/linux/rockchip target/linux/rockchip
+svn co https://github.com/1715173329/openwrt/branches/1806-k54-nanopi-r4s-uboot/target/linux/rockchip target/linux/rockchip
 rm -rf ./package/boot/uboot-rockchip
-svn co https://github.com/1715173329/openwrt/branches/1806-k54-nanopi-r4s/package/boot/uboot-rockchip package/boot/uboot-rockchip
+svn co https://github.com/1715173329/openwrt/branches/1806-k54-nanopi-r4s-uboot/package/boot/uboot-rockchip package/boot/uboot-rockchip
 
 ##准备工作
 #使用19.07的feed源
