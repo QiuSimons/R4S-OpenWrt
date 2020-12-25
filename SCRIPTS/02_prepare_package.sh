@@ -10,6 +10,9 @@ svn co https://github.com/1715173329/openwrt/branches/1806-k54-nanopi-r4s-uboot/
 rm -rf ./package/boot/uboot-rockchip
 svn co https://github.com/1715173329/openwrt/branches/1806-k54-nanopi-r4s-uboot/package/boot/uboot-rockchip package/boot/uboot-rockchip
 
+sed -i 's,"lan_led","nanopi-r4s:green:lan",g' ./target/linux/rockchip/patches-5.4/302-arm64-dts-rockchip-Add-Nanopi-R4S-board-support.patch
+sed -i 's,"wan_led","nanopi-r4s:green:wan",g' ./target/linux/rockchip/patches-5.4/302-arm64-dts-rockchip-Add-Nanopi-R4S-board-support.patch
+
 ##准备工作
 #使用19.07的feed源
 rm -f ./feeds.conf.default
