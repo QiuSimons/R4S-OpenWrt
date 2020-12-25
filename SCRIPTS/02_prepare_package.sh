@@ -129,8 +129,7 @@ git clone --depth 1 https://github.com/NateLol/luci-app-beardropper.git package/
 sed -i 's/"luci.fs"/"luci.sys".net/g' package/luci-app-beardropper/luasrc/model/cbi/beardropper/setting.lua
 sed -i '/firewall/d' package/luci-app-beardropper/root/etc/uci-defaults/luci-beardropper
 #luci-app-freq
-#svn co https://github.com/project-openwrt/openwrt/branches/master/package/lean/luci-app-cpufreq package/lean/luci-app-cpufreq
-svn co https://github.com/1715173329/openwrt/branches/1806-k54-nanopi-r4s/package/lean/luci-app-cpufreq  package/lean/luci-app-cpufreq
+svn co https://github.com/project-openwrt/openwrt/branches/master/package/lean/luci-app-cpufreq package/lean/luci-app-cpufreq
 #京东签到
 git clone --depth 1 https://github.com/jerrykuku/node-request.git package/new/node-request
 git clone --depth 1 https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/new/luci-app-jd-dailybonus
@@ -144,7 +143,6 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-accessco
 cp -rf ../PATCH/duplicate/luci-app-control-weburl ./package/new/luci-app-control-weburl
 #AutoCore
 svn co https://github.com/project-openwrt/openwrt/branches/master/package/lean/autocore package/lean/autocore
-#svn co https://github.com/1715173329/openwrt/branches/1806-k54-nanopi-r4s/package/lean/autocore package/lean/autocore
 svn co https://github.com/project-openwrt/packages/trunk/utils/coremark feeds/packages/utils/coremark
 ln -sf ../../../feeds/packages/utils/coremark ./package/feeds/packages/coremark
 sed -i 's,default n,default y,g' feeds/packages/utils/coremark/Makefile
