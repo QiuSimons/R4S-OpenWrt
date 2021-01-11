@@ -24,10 +24,10 @@ patch -p1 < ../PATCH/new/main/0001-tools-add-upx-ucl-support.patch
 sed -i 's,SNAPSHOT,,g' include/version.mk
 sed -i 's,snapshots,,g' package/base-files/image-config.in
 sed -i 's, (傻逼商家售卖本固件必死),,g' target/linux/rockchip/patches-5.4/200-rockchip-add-support-for-NanoPi-R4S.patch
-#使用O3级别的优化
-sed -i 's/Os/O3/g' include/target.mk
+#使用O2级别的优化
+sed -i 's/Os/O2/g' include/target.mk
 sed -i 's,-mcpu=generic,-march=armv8-a+crypto+crc -mcpu=cortex-a73.cortex-a53+crypto+crc -mtune=cortex-a73.cortex-a53,g' include/target.mk
-sed -i 's/O2/O3/g' ./rules.mk
+sed -i 's/O2/O2/g' ./rules.mk
 #更新feed
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
