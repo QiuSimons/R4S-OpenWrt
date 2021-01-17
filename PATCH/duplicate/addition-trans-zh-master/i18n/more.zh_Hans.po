@@ -1158,3 +1158,6 @@ msgstr "比例因子"
 
 msgid "This is the percentage that will use the zswap pool when zram is enabled. This represents the uncompressed data size as a percentage of the zram\'s pool maximum size."
 msgstr "这是zRam启用后，zSwap占用的内存百分比。这也表示未压缩数据占zRam池的最大占比。"
+
+msgid "Enable FullCone NAT"
+msgstr "启用FullCone-NAT"
