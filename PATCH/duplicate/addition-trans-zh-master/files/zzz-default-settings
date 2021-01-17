@@ -32,7 +32,7 @@ uci commit uhttpd
 /etc/init.d/uhttpd restart
 
 #firewall
-uci set firewall.@zone[1].fullcone='1'
+uci set firewall.@defaults[0].fullcone='1'
 uci commit firewall
 
 #upnp
