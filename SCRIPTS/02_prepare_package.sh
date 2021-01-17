@@ -54,9 +54,10 @@ popd
 mkdir package/network/config/firewall/patches
 wget -P package/network/config/firewall/patches/ https://github.com/LGA1150/fullconenat-fw3-patch/raw/master/fullconenat.patch
 # Patch LuCI 以增添fullcone开关
-pushd feeds/luci
-wget -O- https://github.com/LGA1150/fullconenat-fw3-patch/raw/master/luci.patch | git apply
-popd
+patch -p1 < ../PATCH/new/package/luci-app-firewall_add_fullcone.patch
+#pushd feeds/luci
+#wget -O- https://github.com/LGA1150/fullconenat-fw3-patch/raw/master/luci.patch | git apply
+#popd
 #FullCone 相关组件
 cp -rf ../openwrt-lienol/package/network/fullconenat ./package/network/fullconenat
 #（从这行开始接下来3个操作全是和SFE相关的，不需要可以一并注释掉，但极不建议
